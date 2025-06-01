@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Organiser from "./pages/Organiser";
 import Programme from "./pages/Programme";
-import Callforus from "./pages/callforus";
+import Callforus from "./pages/Callforus";
 function App() {
   
 
