@@ -34,7 +34,7 @@ const Navbar = () => {
             <a href="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
             <a href="/workshopprogramme" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</a>
             
-            <a href="/organization" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
+            <a href="/organiser" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
             <a href="/callforpaper" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</a>
           </div>
         )}
