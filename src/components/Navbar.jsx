@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react'; // You can also use Heroicons or any icon library
+import { Link, Menu, X } from 'lucide-react'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,11 +13,11 @@ const Navbar = () => {
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
-            <a href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-            <a href="/workshopprogramme" className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</a>
+            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
+            <Link to="/workshopprogramme" className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</Link>
             
-            <a href="/organiser" className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
-            <a href="/callforus" className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</a>
+            <Link to="/organiser" className="text-gray-700 hover:text-blue-600 font-medium">Organiser</Link>
+            <Link to="/callforus" className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</Link>
           </div>
 
           {/* Mobile Hamburger */}
@@ -31,11 +31,11 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col space-y-4 py-4">
-            <a href="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-            <a href="/workshopprogramme" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</a>
+            <Link to="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
+            <Link to="/workshopprogramme" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</Link>
             
-            <a href="/organization" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
-            <a href="/callforus" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</a>
+            <Link to="/organization" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</Link>
+            <link to="/callforus" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</link>
           </div>
         )}
       </div>
