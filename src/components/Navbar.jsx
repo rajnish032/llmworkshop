@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Menu, X } from 'lucide-react'; 
+import { Menu, X } from 'lucide-react'; // You can also use Heroicons or any icon library
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -7,17 +7,17 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-white shadow-md z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center items-center h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo or Title */}
           {/* <div className="text-xl font-bold text-blue-600">MyEvent</div> */}
 
           {/* Desktop Links */}
           <div className="hidden md:flex space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
-            <Link to="/workshopprogramme" className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</Link>
+            <a href="/" className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="/workshopprogramme" className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</a>
             
-            <Link to="/organiser" className="text-gray-700 hover:text-blue-600 font-medium">Organiser</Link>
-            <Link to="/callforus" className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</Link>
+            <a href="/organiser" className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
+            <a href="/callforpaper" className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</a>
           </div>
 
           {/* Mobile Hamburger */}
@@ -31,11 +31,11 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="md:hidden flex flex-col space-y-4 py-4">
-            <Link to="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Home</Link>
-            <Link to="/workshopprogramme" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</Link>
+            <a href="/" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="/workshopprogramme" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Workshop Programme</a>
             
-            <Link to="/organization" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</Link>
-            <link to="/callforus" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</link>
+            <a href="/organization" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Organiser</a>
+            <a href="/callforpaper" onClick={() => setIsOpen(false)} className="text-gray-700 hover:text-blue-600 font-medium">Call for Paper</a>
           </div>
         )}
       </div>
