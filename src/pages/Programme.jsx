@@ -6,7 +6,8 @@ const ProgramSchedule = () => {
       {/* Header */}
       <section className="text-center">
         <h1 className="text-3xl font-bold text-blue-700">
-          1st International Workshop on Big Data Analytics with Artificial Intelligence for Climate Change
+          1st International Workshop on 
+                Harnessing Big Data Analytics with Large Language Models
         </h1>
         <p className="text-lg mt-2 font-medium text-gray-600">
           <strong>Workshop Chair:</strong> Dr. Abhijit Kumar
