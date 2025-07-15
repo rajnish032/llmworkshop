@@ -77,6 +77,11 @@ const Header = () => {
                   title: "Macau SAR, China",
                   subtitle: "Hybrid Event (In-person & Virtual)",
                 },
+                {
+                  icon: "🔗",
+                  title: "Conference Page",
+                  link: " https://conferences.cis.um.edu.mo/ieeebigdata2025/index.html",
+                },
               
               ].map((item, idx) => (
                 <div
@@ -87,6 +92,17 @@ const Header = () => {
                   <div>
                     <p className="font-medium text-gray-800">{item.title}</p>
                     <p className="text-sm text-gray-600">{item.subtitle}</p>
+                    {item.link && (
+                      <p className="text-sm text-slate-600 mt-1">
+                        <a
+                          href={item.link}
+                          
+                          className="text-blue-600 underline"
+                        >
+                          Visit Site
+                        </a>
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
