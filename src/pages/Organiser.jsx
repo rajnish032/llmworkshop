@@ -33,14 +33,27 @@ const workshopChairs = [
 ];
 
 const committeeList = [
-  "Workshop Chairs: Dr. Abhijit Kumar, Dr. Ashutosh Sharma, Dr. Tanupriya Choudhury, Mr. Praveen Kumar",
-  "TPC Co-Chair: Prof. Sandro Fiore, University of Trento, Italy",
-  "Organizing Co-Chairs: Representation from Italy",
-  "TPC Members: Minimum of ten foreign specialists involved",
-  "WEB Chairs: IIT Bombay team",
-  "Publicity Co-Chairs: Teams from India and the United States",
-  "Invited Speakers: Experts from the US, Italy, Australia, and industries like Google, Amazon, Microsoft",
+  {
+    name: "Dr. Vijay Prakash",
+    role: "Research Support Officer III",
+    affiliation: "Faculty of ICT, University of Malta, Msida, Malta",
+    phone: "+35677650782",
+    email: "vijay.prakash@um.edu.mt",
+  },
+  {
+    name: "Dr. Rahul Kumar Singh",
+    role: "Assistant Professor-SG, AI Cluster",
+    affiliation: "School of Computer Science, UPES Dehradun-248001 India",
+    email: "rk.singh@ddn.upes.ac.in",
+  },
+  {
+    name: "Dr. Deepika Koundal",
+    role: "",
+    affiliation: "University of Eastern Finland, Kuopio, Finland",
+    email: "dkoundal@uef.fi",
+  },
 ];
+
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -103,21 +116,42 @@ const Organiser = () => {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold text-center text-slate-800 mt-20 mb-6">
-          Organizing Committee
-        </h2>
+      <h2 className="text-3xl font-bold text-center text-slate-800 mt-20 mb-6">
+  Technical Program Committee (TPC)
+</h2>
 
-        <motion.ul
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeInUp}
-          className="list-disc list-inside space-y-3 max-w-3xl mx-auto text-slate-700 text-sm sm:text-base"
-        >
-          {committeeList.map((item, index) => (
-            <li key={index}>{item}</li>
-          ))}
-        </motion.ul>
+<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+  {committeeList.map((member, index) => (
+    <motion.div
+      key={index}
+      custom={index}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={fadeInUp}
+      className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
+    >
+      <h3 className="text-lg font-semibold text-indigo-700">{member.name}</h3>
+      {member.role && (
+        <p className="text-sm text-slate-600 mt-1 italic">{member.role}</p>
+      )}
+      <p className="text-sm text-slate-600 mt-1">{member.affiliation}</p>
+      {member.phone && (
+        <p className="text-sm text-slate-600 mt-1">
+          📞 <a href={`tel:${member.phone}`} className="text-blue-600 underline">{member.phone}</a>
+        </p>
+      )}
+      {member.email && (
+        <p className="text-sm text-slate-600 mt-1">
+          📧 <a href={`mailto:${member.email}`} className="text-blue-600 underline">{member.email}</a>
+        </p>
+      )}
+    </motion.div>
+  ))}
+</div>
+
+
+        
       </div>
     </section>
   );

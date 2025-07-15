@@ -43,23 +43,15 @@ const Header = () => {
         <div className="container mx-auto px-6 flex flex-col md:flex-row items-center relative z-10">
           {/* Left Content */}
           <div className="md:w-1/2 mb-16 md:mb-0 text-gray-900 relative z-20">
-            <div className="flex flex-wrap gap-3 mb-8 animate-fadeIn">
-              {["International Workshop", "1st Edition"].map((text, idx) => (
-                <span
-                  key={idx}
-                  className="bg-blue-100 text-blue-700 px-5 py-2 rounded-full text-sm font-medium shadow-sm backdrop-blur-sm"
-                >
-                  {text}
-                </span>
-              ))}
-            </div>
+            
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8 animate-fadeIn">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-8 animate-fadeIn">
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                1st International Workshop on 
                 Harnessing Big Data
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-pink-600">
-                Analytics with LLMs
+                Analytics with Large Language Models
               </span>
             </h1>
 
@@ -68,8 +60,8 @@ const Header = () => {
                 HBDA-LLM 2025
               </p>
               <p className="text-lg text-gray-700 max-w-lg">
-                The premier international workshop bridging big data analytics
-                and large language model research
+                In conjunction with the IEEE International Conference on Big Data 2025
+                                                                 Macau SAR, China.
               </p>
             </div>
 
@@ -78,18 +70,14 @@ const Header = () => {
                 {
                   icon: "📅",
                   title: "December 8, 2025",
-                  subtitle: "cutting-edge research",
+                  subtitle: "Workshop Date",
                 },
                 {
                   icon: "📍",
-                  title: "San Francisco, CA",
+                  title: "Macau SAR, China",
                   subtitle: "Hybrid Event (In-person & Virtual)",
                 },
-                {
-                  icon: "🔗",
-                  title: "Co-located with ACM SIGMOD 2025",
-                  subtitle: "Part of the premier database conference",
-                },
+              
               ].map((item, idx) => (
                 <div
                   key={idx}

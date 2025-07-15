@@ -1,6 +1,6 @@
 import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Organiser from "./pages/Organiser";
 import ProgramSchedule from "./pages/Programme";
@@ -19,7 +19,7 @@ function App() {
       <Route path="/workshopprogramme" element={<ProgramSchedule />}/>
       <Route path="/workshopinfo" element={<WorkshopInfo />}/>
     </Routes>
-    <Footer />
+    {/* <Footer /> */}
   </BrowserRouter>
     
   )

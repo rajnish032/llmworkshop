@@ -6,17 +6,17 @@ const ProgramSchedule = () => {
       {/* Header */}
       <section className="text-center">
         <h1 className="text-3xl font-bold text-blue-700">
-          2nd International Workshop on Big Data Analytics with Artificial Intelligence for Climate Change
+          1st International Workshop on Big Data Analytics with Artificial Intelligence for Climate Change
         </h1>
         <p className="text-lg mt-2 font-medium text-gray-600">
-          <strong>Workshop Chair:</strong> Prof. Rajiv Misra
+          <strong>Workshop Chair:</strong> Dr. Abhijit Kumar
         </p>
         <p className="mt-1">
-          <strong>Date:</strong> December 18, 2024 &nbsp;|&nbsp; <strong>Time Zone:</strong> US Eastern Standard Time
+          <strong>Date:</strong> December 8, 2025 &nbsp;|&nbsp; <strong>Time Zone:</strong> US Eastern Standard Time
         </p>
         <p className="mt-2">
           <strong>Meeting Link:</strong>{' '}
-          <a href="#" className="text-blue-600 underline hover:text-blue-800">
+          <a href="https://teams.microsoft.com/l/meetup-join/19%3ameeting_YzcwMDQwZWQtNWJmNy00NTZlLWE4MjAtNjIzMzM4NjRkY2Q1%40thread.v2/0?context=%7b%22Tid%22%3a%22a57f7d92-038e-4d4c-8265-7cd2beb33b34%22%2c%22Oid%22%3a%227e8b17c8-9baf-480f-9659-bcac8f5a324b%22%7d" className="text-blue-600 underline hover:text-blue-800">
             Join Here
           </a>
         </p>
@@ -34,7 +34,7 @@ const ProgramSchedule = () => {
                 <th className="border px-4 py-2">Presenter / Author</th>
               </tr>
             </thead>
-            <tbody>
+            {/* <tbody>
               {[
                 ["8:30-8:45", "Opening Remarks by Organizers", "-"],
                 ["8:45-9:00", "S24210- Graph Representation Learning for Dengue Forecasting", "Jiaqi Weng"],
@@ -63,7 +63,11 @@ const ProgramSchedule = () => {
                   <td className="border px-4 py-2">{author}</td>
                 </tr>
               ))}
-            </tbody>
+            </tbody> */}
+
+            <div>
+              <h1>To Be Announced ....</h1>
+            </div>
           </table>
         </div>
       </section>
