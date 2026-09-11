@@ -1,59 +1,39 @@
-
-
 import React from "react";
 import { motion } from "framer-motion";
+import { Users, Award } from "lucide-react";
 
-// Chair images (replace with actual image URLs or import local assets)
-const workshopChairs = [
+// Generate avatar URL based on name
+const getAvatarUrl = (name) => `https://ui-avatars.com/api/?name=${encodeURIComponent(name.replace('Prof.', '').trim())}&background=059669&color=fff&size=128&bold=true`;
+
+const workshopOrganizers = [
   {
-    name: "Dr. Abhijit Kumar",
-    image: "https://res.cloudinary.com/dz3yaj24a/image/upload/v1748791162/c_mutb9z.jpg",
-    description:
-      "Dr. Abhijit Kumar is a Senior Associate Professor at UPES Dehradun and also a Visvesvaraya Research Fellow at IIT Patna. His core research areas include Remote Sensing using Deep Learning, Generative AI, and Natural Language Processing (NLP). He is an active member of IEEE, IACSIT Singapore, IAENG Hong Kong, and UACEE.",
+    name: "Prof. Rajiv Misra",
+    affiliation: "Indian Institute of Technology (IIT), Patna",
+    image: getAvatarUrl("Rajiv Misra"),
+    role: "Workshop Organizer",
   },
   {
-    name: "Dr. Ashutosh Sharma",
-    image: "https://res.cloudinary.com/dz3yaj24a/image/upload/v1748791162/a_akyq0t.jpg",
-    description:
-      "Dr. Ashutosh Sharma serves as a Distinguished Professor at Henan University of Science and Technology, China. He has expertise in IoT, Big Data, and e-Business. He has published 62+ papers and is a consultant for various international bodies.",
-    link: "https://scholar.google.co.in/citations?user=MvJPqGMAAAAJ&hl=en",
+    name: "Prof. T.N. Singh",
+    affiliation: "IIT Patna, India",
+    image: getAvatarUrl("TN Singh"),
+    role: "Workshop Organizer",
   },
   {
-    name: "Dr. Tanupriya Choudhury",
-    image: "https://res.cloudinary.com/dz3yaj24a/image/upload/v1748791163/b_vqkg6e.jpg",
-    description:
-      "Dr. Tanupriya Choudhury is a Professor at UPES Dehradun and a Visiting Professor at DIU, Bangladesh. He has filed 25 patents and 16 software copyrights and published over 150 papers in Cloud, Soft Computing, and Data Mining.",
-  },
-  {
-    name: "Mr. Praveen Kumar",
-    image: "https://res.cloudinary.com/dz3yaj24a/image/upload/v1748791183/p_ilus3z.jpg",
-    description:
-      "Mr. Praveen Kumar is an Assistant Professor at B.P. Mandal College of Engineering and a Ph.D. scholar at IIT Patna. His research interests include UAVs, RIS, Deep RL, Transformers, and LLMs.",
+    name: "Prof. Supratik Mukhopadhyay",
+    affiliation: "Louisiana State University, USA",
+    image: getAvatarUrl("Supratik Mukhopadhyay"),
+    role: "Workshop Organizer",
   },
 ];
 
-const committeeList = [
-  {
-    name: "Dr. Vijay Prakash",
-    role: "Research Support Officer III",
-    affiliation: "Faculty of ICT, University of Malta, Msida, Malta",
-    phone: "+35677650782",
-    email: "vijay.prakash@um.edu.mt",
-  },
-  {
-    name: "Dr. Rahul Kumar Singh",
-    role: "Assistant Professor-SG, AI Cluster",
-    affiliation: "School of Computer Science, UPES Dehradun-248001 India",
-    email: "rk.singh@ddn.upes.ac.in",
-  },
-  {
-    name: "Dr. Deepika Koundal",
-    role: "",
-    affiliation: "University of Eastern Finland, Kuopio, Finland",
-    email: "dkoundal@uef.fi",
-  },
+const tpcList = [
+  { name: "Prof. Gokarna Sharma", affiliation: "Kent State University" },
+  { name: "Prof. Sandro Fiore", affiliation: "University of Trento, Italy" },
+  { name: "Prof. Subhajit Sidhanta", affiliation: "IIT Bhilai" },
+  { name: "Prof. Yimin Zhu", affiliation: "Louisiana State University" },
+  { name: "Prof. Hector Zapata", affiliation: "Louisiana State University" },
+  { name: "Prof. Tairan Liu", affiliation: "California State University, Longbeach" },
 ];
-
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -66,14 +46,25 @@ const fadeInUp = {
 
 const Organiser = () => {
   return (
-    <section id="organiser" className="bg-sky-50 px-6 py-20">
-      <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-bold text-center text-slate-800 mb-12">
-          Workshop Chairs
-        </h2>
+    <section id="organiser" className="bg-slate-50 min-h-screen pt-24 pb-20 px-6 font-sans relative overflow-hidden">
+      {/* Background decorations */}
+      <div className="absolute top-20 right-0 w-96 h-96 bg-emerald-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-60"></div>
+      <div className="absolute bottom-20 left-0 w-[500px] h-[500px] bg-teal-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-60"></div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
-          {workshopChairs.map((chair, index) => (
+      <div className="max-w-7xl mx-auto relative z-10">
+        
+        {/* Workshop Organizers Section */}
+        <div className="text-center mb-16">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 mb-6 shadow-sm">
+            <Award className="w-8 h-8" />
+          </div>
+          <h2 className="text-4xl md:text-5xl font-extrabold text-slate-800 tracking-tight">
+            Workshop <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-500">Organizers</span>
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+          {workshopOrganizers.map((organizer, index) => (
             <motion.div
               key={index}
               custom={index}
@@ -81,76 +72,64 @@ const Organiser = () => {
               whileInView="visible"
               viewport={{ once: true }}
               variants={fadeInUp}
-              className="bg-white border border-slate-200 rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-3xl p-8 text-center shadow-lg shadow-slate-200/50 border border-slate-100 hover:-translate-y-2 hover:shadow-xl hover:shadow-emerald-900/5 transition-all duration-300 group"
             >
-              <div className="flex items-center gap-4 p-6">
+              <div className="relative inline-block mb-6">
+                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-teal-500 rounded-full blur-md opacity-50 group-hover:opacity-100 transition-opacity"></div>
                 <img
-                  src={chair.image}
-                  alt={chair.name}
-                  className="w-20 h-20 object-cover rounded-full border-2 border-indigo-300"
+                  src={organizer.image}
+                  alt={organizer.name}
+                  className="relative w-32 h-32 object-cover rounded-full border-4 border-white shadow-sm"
                 />
-                <div>
-                  <h3 className="text-lg font-semibold text-indigo-700">
-                    {chair.name}
-                  </h3>
-                  <p className="text-sm text-slate-600 mt-1">
-                    {chair.link ? (
-                      <a
-                        href={chair.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-blue-600 underline"
-                      >
-                        View Profile
-                      </a>
-                    ) : (
-                      ""
-                    )}
-                  </p>
-                </div>
               </div>
-              <div className="px-6 pb-6 text-sm text-slate-700 leading-relaxed">
-                {chair.description}
-              </div>
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">
+                {organizer.name}
+              </h3>
+              <p className="text-sm font-semibold text-emerald-600 uppercase tracking-wider mb-2">
+                {organizer.role}
+              </p>
+              <p className="text-slate-600">
+                {organizer.affiliation}
+              </p>
             </motion.div>
           ))}
         </div>
 
-      <h2 className="text-3xl font-bold text-center text-slate-800 mt-20 mb-6">
-  Technical Program Committee (TPC)
-</h2>
+        {/* TPC Section */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 text-teal-600 mb-6 shadow-sm">
+            <Users className="w-8 h-8" />
+          </div>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-800 tracking-tight">
+            Technical Program <span className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-cyan-500">Committee</span>
+          </h2>
+        </div>
 
-<div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
-  {committeeList.map((member, index) => (
-    <motion.div
-      key={index}
-      custom={index}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      variants={fadeInUp}
-      className="bg-white border border-slate-200 p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300"
-    >
-      <h3 className="text-lg font-semibold text-indigo-700">{member.name}</h3>
-      {member.role && (
-        <p className="text-sm text-slate-600 mt-1 italic">{member.role}</p>
-      )}
-      <p className="text-sm text-slate-600 mt-1">{member.affiliation}</p>
-      {member.phone && (
-        <p className="text-sm text-slate-600 mt-1">
-          📞 <a href={`tel:${member.phone}`} className="text-blue-600 underline">{member.phone}</a>
-        </p>
-      )}
-      {member.email && (
-        <p className="text-sm text-slate-600 mt-1">
-          📧 <a href={`mailto:${member.email}`} className="text-blue-600 underline">{member.email}</a>
-        </p>
-      )}
-    </motion.div>
-  ))}
-</div>
-
-
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {tpcList.map((member, index) => (
+            <motion.div
+              key={index}
+              custom={index}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-teal-200 hover:shadow-md transition-all duration-300 flex items-start gap-4"
+            >
+              <div className="flex-shrink-0">
+                <img
+                  src={getAvatarUrl(member.name)}
+                  alt={member.name}
+                  className="w-14 h-14 rounded-full border-2 border-slate-100"
+                />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-slate-800">{member.name}</h3>
+                <p className="text-sm text-slate-500 mt-1">{member.affiliation}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
         
       </div>
     </section>

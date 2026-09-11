@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@layer utilities {
+  .font-serif-academic {
+    font-family: 'Newsreader', Garamond, Georgia, 'Times New Roman', serif;
+  }
+  .font-mono-academic {
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+}
